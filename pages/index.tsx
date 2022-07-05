@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import AppBar from '../components/Appbar/AppBar'
+import Avatar from '../components/Avatar/Avatar'
 
 import Layout from '../layouts/Layout'
 
@@ -17,7 +18,7 @@ const App: NextPage = () => {
       <AppBar />
       <main>
         <Layout>
-          <h1>Test</h1>
+          <Avatar src='https://reqres.in/img/faces/7-image.jpg'/>
         </Layout>
       </main>
     </div>
