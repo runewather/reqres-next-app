@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import AppBar from '../components/Appbar/AppBar'
-import Avatar from '../components/Avatar/Avatar'
+import UserCard from '../components/UserCard/UserCard'
 
 import Layout from '../layouts/Layout'
 
@@ -18,7 +18,7 @@ const App: NextPage = () => {
       <AppBar />
       <main>
         <Layout>
-          <Avatar src='https://reqres.in/img/faces/7-image.jpg'/>
+          <UserCard avatar='https://reqres.in/img/faces/7-image.jpg' firstName='Test' lastName='test2' email='test@test.com' />
         </Layout>
       </main>
     </div>

@@ -1,15 +1,16 @@
 import styles from "./Avatar.module.css"
 
 interface Props {
-  src: string;
+  src?: string;
   alt?: string;
   width?: number;
   height?: number;  
+  style?: React.CSSProperties;
 }
 
-const Avatar: React.FC<Props> = ({ src, alt, width = "64px", height = "64px" }) => {
+const Avatar: React.FC<Props> = ({ src, alt, width = "64px", height = "64px", style }) => {
   return (
-    <img src={src} alt={alt} width={width} height={height} className={styles.avatar} />
+    <img style={style} src={src} alt={alt} width={width} height={height} className={styles.avatar} />
   )
 }
 
