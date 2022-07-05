@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import AppBar from '../components/Navbar/AppBar'
+import AppBar from '../components/Appbar/AppBar'
 
 import Layout from '../layouts/Layout'
 
@@ -15,9 +15,11 @@ const App: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppBar />
-      <Layout>
-        <h1>Test</h1>
-      </Layout>
+      <main>
+        <Layout>
+          <h1>Test</h1>
+        </Layout>
+      </main>
     </div>
   )
 }
