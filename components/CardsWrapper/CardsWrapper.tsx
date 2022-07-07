@@ -6,9 +6,11 @@ import { UsersResponse } from "../../interfaces/usersResponse";
 
 interface Props {
   usersData: UsersResponse;
+  onNext: () => void;
+  onPrevious: () => void;
 }
 
-const CardsWrapper: React.FC<Props> = ({ usersData }) => {
+const CardsWrapper: React.FC<Props> = ({ usersData, onNext, onPrevious }) => {
   return (
     <div>
       <div className={styles.cardsWrapper}>
@@ -23,8 +25,10 @@ const CardsWrapper: React.FC<Props> = ({ usersData }) => {
         ))}
       </div>
       <div className={styles.buttonWrapper}>
-        <button>Previous</button>
-        <button>Next</button>
+        {usersData.page > 1 && <button onClick={onPrevious}>Previous</button>}
+        {usersData.page + 1 <= usersData.total_pages && (
+          <button onClick={onNext}>Next</button>
+        )}
       </div>
     </div>
   );
