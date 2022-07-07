@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import CardsContainer from '../components/CardsContainer/CardsContainer'
+import CardsWrapper from '../components/CardsWrapper/CardsWrapper'
 
 import Layout from '../layouts/Layout'
 
@@ -16,7 +16,7 @@ const App: NextPage = () => {
       </Head>
       <main>
         <Layout>
-          <CardsContainer />
+          <CardsWrapper />
         </Layout>
       </main>
     </div>

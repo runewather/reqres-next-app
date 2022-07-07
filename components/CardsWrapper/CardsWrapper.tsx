@@ -1,10 +1,10 @@
-import styles from "./CardsContainer.module.css";
+import styles from "./CardsWrapper.module.css";
 
 import UserCard from "../UserCard/UserCard";
 
-const CardsContainer: React.FC = () => {
+const CardsWrapper: React.FC = () => {
   return (
-    <div className={styles.cardsContainer}>
+    <div className={styles.cardsWrapper}>
       {new Array(6).fill(0).map((a, i) => (
         <UserCard key={i} avatar='https://reqres.in/img/faces/7-image.jpg' firstName='Test' lastName='test2' email='test@test.com' />
       ))}
@@ -12,4 +12,4 @@ const CardsContainer: React.FC = () => {
   )
 }
 
-export default CardsContainer;
+export default CardsWrapper;
