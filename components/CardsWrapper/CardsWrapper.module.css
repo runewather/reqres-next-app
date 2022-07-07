@@ -1,7 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .cardsWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   gap: 32px;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
 }

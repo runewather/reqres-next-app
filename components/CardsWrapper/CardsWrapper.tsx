@@ -2,14 +2,32 @@ import styles from "./CardsWrapper.module.css";
 
 import UserCard from "../UserCard/UserCard";
 
-const CardsWrapper: React.FC = () => {
-  return (
-    <div className={styles.cardsWrapper}>
-      {new Array(6).fill(0).map((a, i) => (
-        <UserCard key={i} avatar='https://reqres.in/img/faces/7-image.jpg' firstName='Test' lastName='test2' email='test@test.com' />
-      ))}
-    </div>
-  )
+import { UsersResponse } from "../../interfaces/usersResponse";
+
+interface Props {
+  usersData: UsersResponse;
 }
+
+const CardsWrapper: React.FC<Props> = ({ usersData }) => {
+  return (
+    <div>
+      <div className={styles.cardsWrapper}>
+        {usersData.data.map((a) => (
+          <UserCard
+            key={a.email}
+            avatar={a.avatar}
+            firstName={a.first_name}
+            lastName={a.last_name}
+            email={a.email}
+          />
+        ))}
+      </div>
+      <div className={styles.buttonWrapper}>
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
+    </div>
+  );
+};
 
 export default CardsWrapper;
