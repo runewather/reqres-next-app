@@ -5,5 +5,5 @@ import AppBar from "../../components/Appbar/AppBar";
 test("It render the title correctly", () => {
   render(<AppBar />);
 
-  expect(screen.getByText("Regres.in")).toBeInTheDocument();
+  expect(screen.getByText("Reqres.in")).toBeInTheDocument();
 })

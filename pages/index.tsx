@@ -10,7 +10,7 @@ const App: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Regres next js app</title>
+        <title>Reqres next js app</title>
         <meta name="description" content="A NextJS app using the regres.in API" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
