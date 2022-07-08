@@ -37,12 +37,20 @@ const CardsWrapper: React.FC<Props> = ({
       </div>
       <div className={styles.buttonWrapper}>
         {usersData.page > 1 && (
-          <button disabled={isLoading} onClick={onPrevious}>
+          <button
+            className={styles.button}
+            disabled={isLoading}
+            onClick={onPrevious}
+          >
             Previous
           </button>
         )}
         {usersData.page + 1 <= usersData.total_pages && (
-          <button disabled={isLoading} onClick={onNext}>
+          <button
+            className={styles.button}
+            disabled={isLoading}
+            onClick={onNext}
+          >
             Next
           </button>
         )}

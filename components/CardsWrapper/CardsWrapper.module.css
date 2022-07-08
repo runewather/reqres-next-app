@@ -22,3 +22,17 @@
   gap: 16px;
   margin-top: 32px;
 }
+
+.button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  color: white;
+  background-color: black;
+}
