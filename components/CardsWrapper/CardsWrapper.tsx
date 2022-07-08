@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./CardsWrapper.module.css";
 
 import UserCard from "../UserCard/UserCard";
@@ -25,13 +27,16 @@ const CardsWrapper: React.FC<Props> = ({
         {isLoading && <span>Loading...</span>}
         {!isLoading &&
           usersData.data.map((a) => (
-            <UserCard
-              key={a.email}
-              avatar={a.avatar}
-              firstName={a.first_name}
-              lastName={a.last_name}
-              email={a.email}
-            />
+            <Link href={`/user/${a.id}`} key={a.email} passHref>
+              <a style={{ textDecoration: "none" }}>
+                <UserCard
+                  avatar={a.avatar}
+                  firstName={a.first_name}
+                  lastName={a.last_name}
+                  email={a.email}
+                />
+              </a>
+            </Link>
           ))}
         {error && <h3>{`${error.message}`}</h3>}
       </div>
