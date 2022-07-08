@@ -8,6 +8,9 @@ export const getUsers = async (
 ): Promise<UsersResponse> => {
   const queryString = `?page=${pagReq.page}&per_page=${pagReq.perPage}`;
   const res = await fetch(`${BASE_URL}/users${queryString}`);
+  if (res.status !== 200) {
+    throw new Error("An error ocurred!");
+  }
   const data = await res.json();
 
   return data as UsersResponse;

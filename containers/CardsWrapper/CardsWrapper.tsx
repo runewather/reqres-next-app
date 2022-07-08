@@ -10,6 +10,10 @@ import { PaginationRequest } from "../../interfaces/paginationRequest";
 
 const CardsWrapper: React.FC = () => {
   const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
+
   const [usersData, setUserData] = useState<UsersResponse>({
     data: [],
     page: -1,
@@ -22,8 +26,18 @@ const CardsWrapper: React.FC = () => {
     page = 0,
     perPage = 6,
   }: PaginationRequest): Promise<void> => {
-    const data = await getUsers({ page, perPage });
-    setUserData(data);
+    setIsLoading(true);
+    setError(null);
+    try {
+      const data = await getUsers({ page, perPage });
+      setUserData(data);
+      setIsLoading(false);
+    } catch (e) {
+      e instanceof Error
+        ? setError(e as Error)
+        : setError(new Error("An error ocurred!"));
+      setIsLoading(false);
+    }
   };
 
   const nextUserPage = async (): Promise<void> => {
@@ -52,6 +66,8 @@ const CardsWrapper: React.FC = () => {
   return (
     <CardsWrapperComponent
       usersData={usersData}
+      isLoading={isLoading}
+      error={error}
       onNext={nextUserPage}
       onPrevious={previousUserPage}
     />
