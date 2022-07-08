@@ -28,7 +28,7 @@ const CardsWrapper: React.FC<Props> = ({
         {!isLoading &&
           usersData.data.map((a) => (
             <Link href={`/user/${a.id}`} key={a.email} passHref>
-              <a style={{ textDecoration: "none" }}>
+              <a style={{ textDecoration: "none", color: "black" }}>
                 <UserCard
                   avatar={a.avatar}
                   firstName={a.first_name}
